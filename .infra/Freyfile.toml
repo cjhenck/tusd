@@ -131,9 +131,12 @@
     "{{{init.paths.roles_dir}}}/deploy/v1.4.0",
   ]
   [deploy.playbooks.vars]
-    ansistrano_get_url       = "https://github.com/tus/tusd/releases/download/0.1.2/tusd_linux_amd64.tar.gz"
-    ansistrano_deploy_to     = "/srv/tusd"
-    ansistrano_deploy_via    = "download_unarchive"
+    ansistrano_get_url    = "https://github.com/tus/tusd/releases/download/0.1.2/tusd_linux_amd64.tar.gz"
+    ansistrano_deploy_to  = "/srv/tusd"
+    ansistrano_deploy_via = "download_unarchive"
+    ansistrano_npm        = no
+    ansistrano_owner      = "www-data"
+    ansistrano_group      = "www-data"
 
   [[deploy.playbooks.tasks]]
     copy = "src=../env.sh dest=/srv/tusd/current/env.sh mode=0600 owner=root group=root"

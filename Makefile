@@ -6,6 +6,10 @@ PHONY: deploy
 deploy:
 	@cd .infra && source env.sh && frey setup
 
+PHONY: launch
+launch:
+	@cd .infra && source env.infra.sh && frey infra
+
 PHONY: console
 console:
 	@cd .infra && source env.sh && frey remote
